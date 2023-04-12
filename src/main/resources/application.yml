@@ -6,14 +6,14 @@ server:
 
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    username: ${DB_USERNAME}
-    password: ${DB_PW}
-    url: ${DB_URL}
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:gadget-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#    username: sa
+#    password: sa
   jpa:
     generate-ddl: true
     show-sql: true
-    defer-datasource-initialization: false
+    defer-datasource-initialization: true
     hibernate:
       ddl-auto: update
 
