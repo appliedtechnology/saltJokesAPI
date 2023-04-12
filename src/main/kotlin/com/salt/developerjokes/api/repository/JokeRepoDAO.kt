@@ -17,6 +17,8 @@ private fun List<Joke>.getRandom(): Joke? {
   return this[Random.nextInt(this.size)]
 }
 
+private fun String.toUUID(): UUID = UUID.fromString(this)
+
 @Repository
 class JokeRepoDAO(@Autowired private val repo: IJokeRepoDAO) {
 
@@ -33,13 +35,13 @@ class JokeRepoDAO(@Autowired private val repo: IJokeRepoDAO) {
 
   fun getJoke(id: String): Joke? {
     validateUUID(id)
-    return repo.findById(id).orElse(null)
+    return repo.findById(id.toUUID()).orElse(null)
   }
 
   fun deleteJoke(id: String) {
     validateUUID(id)
     try {
-      repo.deleteById(id)
+      repo.deleteById(id.toUUID())
     } catch (exception: EmptyResultDataAccessException) {
       logger.warn("user tried to delete: $id, but it was not found in the database")
     }
