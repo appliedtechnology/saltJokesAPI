@@ -1,5 +1,7 @@
-# DeveloperJokesApp
+# SaltJokesAPI
 [![codecov](https://codecov.io/gh/bacongubbe/DeveloperJokesApp/branch/main/graph/badge.svg)](https://codecov.io/gh/bacongubbe/DeveloperJokesApp)
+
+# this all needs an update 
 
 See the deployed API [here!](https://jokes.bacongubbe.dev/api/jokes/random) 
 
