@@ -10,6 +10,7 @@ import java.net.URI
 
 @RestController
 @RequestMapping("/api/jokes")
+@CrossOrigin
 class JokeController(@Autowired val service: JokeService) {
 
   @GetMapping
