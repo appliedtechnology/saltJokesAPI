@@ -31,6 +31,7 @@ class SecurityConfig {
     return http.csrf().disable()
       .authorizeHttpRequests()
       .requestMatchers("/login").permitAll()
+      .requestMatchers(HttpMethod.HEAD, "/**").permitAll()
       .requestMatchers(HttpMethod.GET, "/**").permitAll()
       .requestMatchers(HttpMethod.POST, "/**").authenticated()
       .requestMatchers(HttpMethod.PUT, "/**").authenticated()
