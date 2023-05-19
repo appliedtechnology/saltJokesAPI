@@ -16,7 +16,7 @@ simple jokes.
 [![Kotlin][Kotlin_logo]][Kotlin_url]
 [![Spring][Spring_logo]][Spring_url]
 [![PostgreSQL][PostgreSQL_logo]][PostgreS_url]
-[![AWS][AWS_logo]][AWS_url]
+[![GCP][GCP_logo]][GCP_url]
 
 ## How to use (public)
 
@@ -62,8 +62,8 @@ Upcoming is a UI to actually interact with the backend for administration.
 
 
 [//]: # (Variables)
-[AWS_logo]: https://img.shields.io/badge/aws-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white
-[AWS_url]: https://aws.amazon.com/
+[GCP_logo]: https://img.shields.io/badge/gcp-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white
+[GCP_url]: https://https://cloud.google.com//
 
 [Kotlin_logo]: https://img.shields.io/badge/kotlin-A020F0?style=for-the-badge&logo=kotlin&logoColor=white
 [Kotlin_url]: https://kotlinlang.org/
