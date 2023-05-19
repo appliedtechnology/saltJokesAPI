@@ -22,7 +22,7 @@ jobs:
       - id: 'auth'
         uses: google-github-actions/auth@v1
         with:
-          credentials_json: ${{ env.GCP_SA_KEY }}
+          credentials_json: '${{ env.GCP_SA_KEY }}'
 
       - uses: actions/checkout@v2
       - name: Set up Java version
