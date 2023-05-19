@@ -33,7 +33,7 @@ jobs:
       - name: Docker Build
         run: docker build -t $IMAGE_URL .
       - name: Setup GCP
-        uses: google-github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@main
         with:
           project_id: saltjokes-385809
           service_account_key: ${{ env.GCP_SA_KEY }}
