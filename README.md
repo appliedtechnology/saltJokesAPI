@@ -63,7 +63,7 @@ Upcoming is a UI to actually interact with the backend for administration.
 
 [//]: # (Variables)
 [GCP_logo]: https://img.shields.io/badge/gcp-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white
-[GCP_url]: https://https://cloud.google.com//
+[GCP_url]: https://cloud.google.com/
 
 [Kotlin_logo]: https://img.shields.io/badge/kotlin-A020F0?style=for-the-badge&logo=kotlin&logoColor=white
 [Kotlin_url]: https://kotlinlang.org/
