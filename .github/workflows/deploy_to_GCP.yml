@@ -37,10 +37,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '17'
-#      - name: Run tests
-#        run: ./gradlew test
+      - name: Run tests
+        run: ./gradlew test
       - name: Build jar
-#        if: success()
+        if: success()
         run: ./gradlew bootJar
 
       - name: Docker Build
