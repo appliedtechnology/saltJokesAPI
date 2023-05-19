@@ -21,6 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: 'auth'
+        name: Authenticate GCP
         uses: google-github-actions/auth@v1
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
@@ -42,11 +43,5 @@ jobs:
 
       - name: Docker Build
         run: docker build -t $IMAGE_URL .
-      - name: Setup GCP
-        uses: google-github-actions/setup-gcloud@v1
-
-      - name: Setup Docker For GCP
-        run: |
-          gcloud auth configure-docker -q
       - name: Docker Push
         run: docker push $IMAGE_URL
