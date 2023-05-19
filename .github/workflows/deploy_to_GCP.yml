@@ -51,7 +51,5 @@ jobs:
       - name: Update Cloud Run service
         uses: google-github-actions/deploy-cloudrun@v1
         with:
-          service_name: jokes
-          service_region: us-central1
+          service: jokes
           image: ${{ env.IMAGE_URL }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
