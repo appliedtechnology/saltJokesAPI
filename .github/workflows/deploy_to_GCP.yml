@@ -13,7 +13,7 @@ on:
     branches:
       - main
 env:
-  IMAGE_URL: europe-north1-docker.pkg.dev/saltjokes-385809/saltjokes-repo/jokes:8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+  IMAGE_URL: europe-north1-docker.pkg.dev/saltjokes-385809/saltjokes-repo/jokes:a5e1bc4c4c1bc4ace114837a0261221752a4ddef
 
 jobs:
   build:
