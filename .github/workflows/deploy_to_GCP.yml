@@ -37,8 +37,8 @@ jobs:
 
       - name: Docker Build
         run: docker build -t $IMAGE_URL .
-      - name: Setup GCP
-        uses: google-github-actions/setup-gcloud@v1
+#      - name: Setup GCP
+#        uses: google-github-actions/setup-gcloud@v1
 
       - name: Setup Docker For GCP
         run: |
