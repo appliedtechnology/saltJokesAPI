@@ -1,55 +1,43 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy JAR app to Azure Web App - saltJokes
-
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Java version
-        uses: actions/setup-java@v1
-        with:
-          java-version: '17'
-      - name: Run tests
-        run: ./gradlew test
-      - name: Build jar
-        if: success()
-        run: ./gradlew bootJar
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: kotlin-app
-          path: '${{ github.workspace }}/build/libs/*-SNAPSHOT.jar'
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: kotlin-app
-
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'saltJokes'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3200230AA0B6461EBEC6010C1ECDB5B4 }}
-          package: '*.jar'
+## Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+## More GitHub Actions for Azure: https://github.com/Azure/actions
+#
+#name: Build and deploy JAR app to Azure Web App - saltJokes
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#  workflow_dispatch:
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#
+#      - name: Set up Java version
+#        uses: actions/setup-java@v1
+#        with:
+#          java-version: '17'
+#      - name: Run tests
+#        run: ./gradlew test
+#      - name: Build jar
+#        if: success()
+#        run: ./gradlew bootJar
+#
+#      - uses: docker/setup-qemu-action@v2
+#        with:
+#          platforms: arm64
+#      - uses: docker/setup-buildx-action@v2
+#      - uses: docker/login-action@v2
+#        with:
+#          registry: europe-north1-docker.pkg.dev
+#          username: _json_key
+#          password: ${{ secrets.GOOGLE_SVC_ACCOUNT_JSON }}
+#      - uses: docker/build-push-action@v3
+#        with:
+#          context: ./
+#          platforms: linux/amd64,linux/arm64
+#          push: true
+#          tags: "europe-north1-docker.pkg.dev/saltjokes-385809/saltjokes-repo/jokes:latest"

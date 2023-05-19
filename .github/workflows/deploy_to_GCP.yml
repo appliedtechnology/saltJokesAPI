@@ -1,0 +1,36 @@
+# on push to main -
+# Checkout src-code
+# Build JAR
+# Create docker image (amd64)
+# Sign in to Artifact Registry and Docker?
+# Upload image to Artifact Reg
+#
+
+name: Build and deploy JAR to GCP
+
+on:
+  push:
+    branches:
+      - main
+
+IMAGE_URL: eu.gcr.io/saltjokes-385809/saltjokes-repo/jokes:${{ github.sha }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Java version
+        uses: actions/setup-java@v1
+        with:
+          java-version: '17'
+#      - name: Run tests
+#        run: ./gradlew test
+      - name: Build jar
+#        if: success()
+        run: ./gradlew bootJar
+
+      - name: Docker Build
+        run: docker build -t $IMAGE_URL .
