@@ -24,6 +24,11 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+      - name: Use gcloud CLI
+        run: gcloud info
+
       - uses: actions/checkout@v2
       - name: Set up Java version
         uses: actions/setup-java@v1
@@ -40,8 +45,8 @@ jobs:
 #      - name: Setup GCP
 #        uses: google-github-actions/setup-gcloud@v1
 
-      - name: Setup Docker For GCP
-        run: |
-          gcloud auth configure-docker -q
+#      - name: Setup Docker For GCP
+#        run: |
+#          gcloud auth configure-docker -q
       - name: Docker Push
         run: docker push $IMAGE_URL
