@@ -47,3 +47,11 @@ jobs:
         run: docker build -t $IMAGE_URL .
       - name: Docker Push
         run: docker push $IMAGE_URL
+
+      - name: Update Cloud Run service
+        uses: google-github-actions/cloud-run@v0.4.0
+        with:
+          service_name: jokes
+          service_region: us-central1
+          image_url: ${{ env.IMAGE_URL }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
