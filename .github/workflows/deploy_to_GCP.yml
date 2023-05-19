@@ -33,11 +33,11 @@ jobs:
       - name: Docker Build
         run: docker build -t $IMAGE_URL .
       - name: Setup GCP
-        uses: google-github-actions/setup-gcloud@main
+        uses: google-github-actions/setup-gcloud@v1
         with:
-          project_id: saltjokes-385809
-          service_account_key: ${{ env.GCP_SA_KEY }}
-          export_default_credentials: true
+#          project_id: saltjokes-385809
+          credentials_json: ${{ env.GCP_SA_KEY }}
+#          export_default_credentials: true
       - name: Setup Docker For GCP
         run: |
           gcloud auth configure-docker -q
