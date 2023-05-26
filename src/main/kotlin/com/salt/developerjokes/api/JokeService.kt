@@ -1,9 +1,6 @@
 package com.salt.developerjokes.api
 
-import com.salt.developerjokes.api.model.jokes.IncomingJokeDTO
-import com.salt.developerjokes.api.model.jokes.Joke
-import com.salt.developerjokes.api.model.jokes.JokeDTO
-import com.salt.developerjokes.api.model.jokes.JokeListDTO
+import com.salt.developerjokes.api.model.jokes.*
 import com.salt.developerjokes.api.repository.JokeRepoDAO
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatusCode
@@ -12,12 +9,12 @@ import org.springframework.web.server.ResponseStatusException
 
 @Service
 class JokeService(@Autowired private val repo: JokeRepoDAO) {
-  fun getRandomJoke(): JokeDTO = repo.getRandomJoke()?.toDTO() ?: throw ResponseStatusException(
+  fun getRandomJoke(): RandomJokeDTO = repo.getRandomJoke()?.toRandomDTO() ?: throw ResponseStatusException(
     HttpStatusCode.valueOf(404),
     "No Jokes in the database"
   )
 
-  fun getRandomJoke(language: String): JokeDTO = repo.getRandomJoke(language)?.toDTO() ?: throw ResponseStatusException(
+  fun getRandomJoke(language: String): RandomJokeDTO = repo.getRandomJoke(language)?.toRandomDTO() ?: throw ResponseStatusException(
     HttpStatusCode.valueOf(404),
     "No Jokes for that language"
   )

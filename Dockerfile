@@ -1,5 +1,4 @@
 FROM openjdk
-VOLUME /tmp
 COPY build/libs/DeveloperJokesApp-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 

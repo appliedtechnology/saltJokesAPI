@@ -17,6 +17,7 @@ class Joke(
   constructor(oldJoke: Joke, newJoke: IncomingJokeDTO) : this(newJoke.text, oldJoke.id, newJoke.language)
 
   fun toDTO(): JokeDTO = JokeDTO(this.text, this.id.toString())
+  fun toRandomDTO() : RandomJokeDTO = RandomJokeDTO(this.text)
   override fun equals(other: Any?): Boolean {
     if (this === other) return true
     if (javaClass != other?.javaClass) return false

@@ -3,6 +3,7 @@ package com.salt.developerjokes.api
 import com.salt.developerjokes.api.model.jokes.IncomingJokeDTO
 import com.salt.developerjokes.api.model.jokes.JokeDTO
 import com.salt.developerjokes.api.model.jokes.JokeListDTO
+import com.salt.developerjokes.api.model.jokes.RandomJokeDTO
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -21,7 +22,7 @@ class JokeController(@Autowired val service: JokeService) {
   }
 
   @GetMapping("/random")
-  fun getRandomJoke(@RequestParam language: String?): ResponseEntity<JokeDTO> {
+  fun getRandomJoke(@RequestParam language: String?): ResponseEntity<RandomJokeDTO> {
     if (language == null || language == "") {
       return ResponseEntity.ok(service.getRandomJoke())
     }
