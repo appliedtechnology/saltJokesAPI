@@ -11,6 +11,7 @@ import java.net.URI
 
 @RestController
 @RequestMapping("/api/jokes")
+@CrossOrigin(origins = ["*"])
 class JokeController(@Autowired val service: JokeService) {
 
   @GetMapping
