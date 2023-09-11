@@ -29,6 +29,7 @@ class SecurityConfig {
   @Bean
   fun defaultSecurityFilterChain(http: HttpSecurity): SecurityFilterChain {
     return http.csrf().disable()
+      .cors().disable()
       .authorizeHttpRequests()
       .requestMatchers("/login").permitAll()
       .requestMatchers(HttpMethod.HEAD, "/**").permitAll()
