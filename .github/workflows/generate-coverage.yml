@@ -5,7 +5,9 @@ on:
     paths-ignore:
       - 'README.md'
       - '.github/workflows/**'
-
+env:
+    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -21,5 +23,4 @@ jobs:
         run: gradle build
       - name: Get Coverage
         uses: codecov/codecov-action@v3
-  env:
-    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  
