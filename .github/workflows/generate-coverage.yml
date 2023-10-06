@@ -20,4 +20,6 @@ jobs:
       - name: Build
         run: gradle build
       - name: Get Coverage
-        uses: codecov/codecov-action@v3.1.1
+        uses: codecov/codecov-action@v3
+  env:
+    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
