@@ -1,5 +1,5 @@
 # SaltJokesAPI
-[![codecov](https://codecov.io/gh/bacongubbe/DeveloperJokesApp/branch/main/graph/badge.svg)](https://codecov.io/gh/bacongubbe/DeveloperJokesApp)
+[![codecov](https://codecov.io/gh/appliedtechnology/saltJokesAPI/graph/badge.svg?token=G65AVGFUFE)](https://codecov.io/gh/appliedtechnology/saltJokesAPI)
 
 # this all needs an update 
 
