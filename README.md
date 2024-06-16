@@ -9,7 +9,7 @@ See the deployed API [here!](https://jokes.bacongubbe.dev/api/jokes/random)
 
 In order for new developers to learn how to use various API's, we've previously worked with various open API's that are
 open for public use.
-Due to changes in other API's, or by the people represented acting up. We created a new API service that just returns
+Due to changes in other API's, or by the people represented acting up, we created a new API service that just returns
 simple jokes.
 
 ## Stack
