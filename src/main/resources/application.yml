@@ -27,4 +27,3 @@ logging:
 admin:
   user: ${ADMIN_USER}
   password: ${ADMIN_PASSWORD}
-
